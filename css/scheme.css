@@ -1,0 +1,89 @@
+/* Page Definitions */
+body {
+	background-color: white;
+	
+	background-image: url('../img/background.jpg');
+}
+
+/* Navigation */
+nav {
+	background-color: #A0A0A0;
+}
+
+nav ul li {
+	border-color: #A0A0A0;
+}
+
+nav ul li a {
+	color: white;
+}
+
+nav ul li:hover, nav ul li:active {
+	background-color: #F5F5F5;
+	
+	border-color: #009AB2;
+}
+
+nav ul li:hover a, nav ul li:active a {
+	color: #009AB2;
+}
+
+/* Fußzeile */
+footer {
+	color: white;
+	background-color: #A0A0A0;
+}
+
+footer a {
+	color: white;
+}
+
+/* Global */
+.bg {
+	background-color: #F5F5F5
+}
+
+
+.text {
+	border-color: #009AB2;
+}
+
+.button {
+	color: white;
+	background-color: #A0A0A0;
+}
+
+.urlbutton {
+	border-color: #A0A0A0;
+}
+
+.button:hover, .button:active {
+	color: #009AB2;
+	background-color: #F5F5F5;
+	
+	border-color: #009AB2;
+}
+
+/* Index */
+aside h3 {
+	border-color: #009AB2;
+}
+
+#promo {
+	color: #009AB2;
+}
+
+/* Login */
+#login h3 {
+	border-color: #009AB2;
+}
+
+/* Register */
+#register h3 {
+	border-color: #009AB2;
+}
+
+/* Home */
+.postinfo {
+	border-color: #009AB2;
+}

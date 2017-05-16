@@ -1,0 +1,146 @@
+* {
+	font-family: Josefin Sans;
+	font-size: 17px;
+}
+
+html, body {
+	height: 100%;
+	
+	overflow: hidden;
+}
+
+/* main */
+main {
+	display: flex;
+	flex-flow: row wrap;
+	
+	height: calc(100% - 128px);
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+	margin-top: 50px;
+	
+	border-radius: 5px;
+}
+
+/* navigation */
+nav {
+	position: absolute;
+	top: 0px;
+	left: -5px;
+	
+	width: calc(100% + 5px);
+}
+
+nav ul {
+	margin: 0;
+	padding: 0px 10px;
+	
+	overflow: hidden;
+	
+	list-style-type: none;
+}
+
+nav ul li {
+	display: block;
+	min-width: 50px;
+	
+	margin: 5px;
+	padding: 10px 2%;
+	
+	border: 2px solid white;
+	
+	text-align: center;
+}
+
+nav ul li:hover {	
+	border-radius: 5px;
+	
+	cursor: pointer;
+}
+
+nav ul li a {
+	text-decoration: none;
+}
+
+/* footer */
+footer {
+	position: absolute;
+	bottom: 20px;
+	width: 80%;
+	
+	margin: 0px 10%;
+	padding: 5px;
+	
+	border-radius: 5px;
+}
+
+footer a {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Global */
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.button {
+	display: inline-block;
+	width: calc(40% - 10px);
+	height: 3em;
+	min-width: 75px;
+		
+	margin: 0px 0px 10px 5px;
+	
+	border: none;
+	border-radius: 5px;
+	
+	text-align: center;
+	cursor: pointer;
+}
+
+.urlbutton {
+	width: calc(40% - 14px);
+	height: calc(3em - 6px);
+	
+	border: 2px solid white;
+	border-radius: 4px;
+	
+	font-size: 17px;
+	line-height: calc(3em - 6px);
+	text-decoration: none;
+}
+
+.button:hover, .button:active {
+	border: 2px solid white;
+}
+
+.text {
+	display: block;
+	width: calc(100% - 20px);
+	
+	margin: 10px 0px 10px 5px;
+	padding: 5px;
+	
+	border: 1px solid white;
+	border-radius: 5px;
+	
+	font-size: 18px;
+}
+
+h3 {
+	width: calc(100% + 5px);
+	
+	font-size: 20px;
+	
+	margin: 10px 0px 10px -5px;
+	padding-left: 5px;
+	
+	border-bottom: 1px solid white;
+}

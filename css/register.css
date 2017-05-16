@@ -1,0 +1,13 @@
+#register {
+	flex: 1 100%;
+	max-width: 400px;
+	
+	margin: auto;
+	padding: 5px;
+	
+	border-radius: 10px;
+}
+
+input[type=reset] {
+	margin-right: 20%;
+}

@@ -1,0 +1,74 @@
+main {
+	margin-top: 50px;
+	
+	border-radius: 5px;
+	
+	background-color: rgba(211,211,211, 0.9);
+}
+
+/* Login Box */
+aside {
+	width: 30%;
+	
+	padding: 5px;
+}
+
+#login {
+	padding: 5px;
+}
+
+.button {
+	width: calc(40% - 10px);
+}
+
+.urlbutton {
+	width: calc(40% - 14px);
+	
+	margin-right: 20%;
+}
+
+/* Promo Box */
+#promo {
+	width: 70%;
+	min-height: 200px;
+	
+	padding: 5px;
+	padding-top: 50px;
+	
+	font-size: 20px
+}
+
+#promo article {
+	padding-left: 20px;
+}
+
+#promo h2 {
+	font-size: 25px;
+}
+
+/* Größenspezifisch: */
+/* Kleines Display (Elemente untereinander) */
+main > * {
+	flex: 1 100%;
+}
+
+/* Mittleres Display (Elemente nebeneinander, kleiner Seitenabstand) */
+@media all and (min-width: 768px) {
+	#promo {
+		flex: 1 auto;
+	}
+	aside {
+		flex: 5 0px;
+		order: 2;
+	}
+}
+
+/* Großes Display (Elemente nebeneinander, großer Seitenabstand) */
+@media all and (min-width: 900px) {
+	main {
+		width: 60%;
+		
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+}
