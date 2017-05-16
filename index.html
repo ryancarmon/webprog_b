@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/scheme.css">
+	<script type='text/javascript' language='javascript' src="js/login.js"></script>
   </head>
   <body>
 	<nav>
@@ -26,9 +27,10 @@
 	<main>
 		<aside>	
 		  <section id="login" class="bg">
-		    <h3>Login</h3>
-	  
-		    <form method="GET" action="home.html">
+		    <h3>Login</h3> 
+			
+			<!-- action und method später ändern -->
+		    <form name="loginForm" action="home.html" onsubmit="return valid()" method="GET">
 			  Benutzername:<br>
 			  <input class="text" type="Text" name="user" placeholder="Benutzername">
 			  Passwort:<br>
