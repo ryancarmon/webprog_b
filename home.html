@@ -8,8 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 	<link rel="stylesheet" type="text/css" href="css/scheme.css">
+	<script type='text/javascript' language='javascript' src="js/post.js"></script>
   </head>
   <body>
+  
 	<nav>
 		<ul>
 			<li class="left">
@@ -18,8 +20,28 @@
 			<li class="right">
 				<a href="index.html">Logout</a>
 			</li>
+			<li class="right">
+				<a href="javascript:showModal();">Beitrag verfassen</a>
+			</li>
 		</ul>
 	</nav>
+	
+	<div id="postModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<h2>Beitrag verfassen</h2>
+			</div>
+			<div class="modal-body">
+				<form action="" onsubmit="return postValid()" method="GET">
+					<textarea id="postText" onkeyup="charCounter()" placeholder="..." required></textarea> <!-- required klären -->
+					<!-- <input id="charCounter" value="0" maxlength="3" size="3" disabled> -->
+					<input id="postBtn" class="button" type="Submit" value="Posten">
+				</form>
+			</div>
+		</div>
+	</div>
+	
 	<main>
 		<section id="home">
 		  <section class="post bg">
