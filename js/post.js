@@ -19,22 +19,23 @@ function postValid()
 {
 	var text = document.getElementById("postText");
 	
-	if(text.value.length > 180)
+	if(text.value == "")
 	{
-		alert("Text ist zu lang.")
+		alert("Es wurde kein Text eingegeben!");
 		text.style.borderColor = "red";
 		return false;
-	}
+	}	
 	else
 	{
-		return true;
+		if(text.value.length > 180)
+		{
+			alert("Text ist zu lang.")
+			text.style.borderColor = "red";
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
-}
-
-function charCount() // Bisschen verändern
-{
-	var text = document.getElementById("postText");
-	var charCounter = document.getElementById("charCounter");
-	
-	charCounter.value = text.value;
 }
