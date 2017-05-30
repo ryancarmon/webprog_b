@@ -144,3 +144,7 @@ h3 {
 	
 	border-bottom: 1px solid white;
 }
+
+#error {
+	margin-bottom: 15px;
+}

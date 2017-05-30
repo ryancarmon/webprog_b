@@ -162,4 +162,7 @@ textarea {
 
 .modal-body {padding: 2px 16px;}*/
 
-
+.postinfo > img {
+	display: inline-block;
+	padding-right: 10px;
+}

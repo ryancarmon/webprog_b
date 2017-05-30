@@ -14,13 +14,13 @@
 	<nav>
 		<ul>
 			<li class="left">
-				<a href="index.html">THwitter</a>
+				<a href="index.php">THwitter</a>
 			</li>
 			<li class="right">
-				<a href="login.html">Login</a>
+				<a href="login.php">Login</a>
 			</li>
 			<li class="right">
-				<a href="register.html">Registrieren</a>
+				<a href="register.php">Registrieren</a>
 			</li>
 		</ul>
 	</nav>
@@ -28,9 +28,8 @@
 		<aside>	
 		  <section id="login" class="bg">
 		    <h3>Login</h3> 
-			
-			<!-- action und method später ändern -->
-		    <form name="loginForm" action="home.html" onsubmit="return valid()" method="GET">
+		    <form name="loginForm" action="login.php" onsubmit="return valid()" method="POST">
+			  <input type="hidden" name="action" value="login">
 			  Benutzername:<br>
 			  <input class="text" type="Text" name="user" placeholder="Benutzername">
 			  Passwort:<br>

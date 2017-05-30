@@ -39,3 +39,7 @@ function postValid()
 		}
 	}
 }
+
+function likeClick(id) {
+	document.location.href = 'index.php?action=like&pid='+id;
+}

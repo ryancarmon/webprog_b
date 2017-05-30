@@ -64,6 +64,10 @@ footer a {
 	border-color: #009AB2;
 }
 
+#error {
+	color: red;
+}
+
 /* Index */
 aside h3 {
 	border-color: #009AB2;

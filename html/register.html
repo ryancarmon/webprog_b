@@ -24,9 +24,11 @@
 	<main>	
 	  <section id="register" class="bg">
 		<h3>Registrierung</h3>	
-		
-		<!-- action und method später ändern-->
-		<form name="registerForm" action="home.html" onsubmit="return valid()" method="GET">
+		<section id="error">
+				<?php echo $error;?>
+		</section>
+		<form name="registerForm" onsubmit="return valid()" method="POST">
+			<input type="hidden" name="action" value="register">
 			Benutzername:<br>
 			<input class="text" type="Text" name="user" placeholder="Benutzername">
 			E-Mail-Adresse:<br>
