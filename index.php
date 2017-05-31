@@ -43,7 +43,4 @@ if(getGet('action')) {
 $posts = $db->getPosts();
 	
 include 'html/home.php';
-
-
-
 ?>
