@@ -8,7 +8,7 @@ date_default_timezone_set('Europe/Berlin');
 
 /* Ist der Benutzer nicht eingeloggt, wird nur die Startseite angezeigt */
 if(!ses_isLoggedIn()) {
-	include 'html/index.html';
+	include 'html/index.php';
 	exit();
 }
 
@@ -42,7 +42,7 @@ if(getGet('action')) {
 
 $posts = $db->getPosts();
 	
-include 'html/home.html';
+include 'html/home.php';
 
 
 

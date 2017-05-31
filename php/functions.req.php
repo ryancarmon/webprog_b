@@ -68,6 +68,6 @@ function displayPost($post) {
 	
 	$likestring .= " gef&auml;llt das";
 	
-	include 'html/post.html';
+	include 'html/post.php';
 }
 ?>

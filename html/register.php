@@ -14,10 +14,10 @@
 	<nav>
 		<ul>
 			<li class="left">
-				<a href="index.html">THwitter</a>
+				<a href="index.php">THwitter</a>
 			</li>
 			<li class="right">
-				<a href="login.html">Login</a>
+				<a href="login.php">Login</a>
 			</li>
 		</ul>
 	</nav>
@@ -42,7 +42,7 @@
 			<input class="button" type="Submit" value="Registrieren">
 		</form>
 		<p>
-			Sie haben schon ein Konto? <a href="login.html">Zur Anmeldung</a>
+			Sie haben schon ein Konto? <a href="login.php">Zur Anmeldung</a>
 		</p>
 	  </section>
 	</main>

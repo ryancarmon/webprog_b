@@ -34,7 +34,7 @@
 			Passwort:<br>
 			<input class="text" type="Password" name="pass" placeholder="Passwort">
 			<br>
-			<a class="button urlbutton" href="register.html">Registrieren</a>
+			<a class="button urlbutton" href="register.php">Registrieren</a>
 			<input class="button" type="Submit" value="Login">
 		</form>
 	  </section>

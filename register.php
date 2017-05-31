@@ -22,25 +22,25 @@ if($action) {
 	
 	if(!($user && $mail && $pass && $pass2)) {
 		$error = "Es wurden nicht alle Felder ausgef&uuml;llt. Bitte &uuml;berpr&uuml;fe Deine Eingabe!";
-		include 'html/register.html';
+		include 'html/register.php';
 		exit();
 	}
 	if($pass != $pass2) {
 		$error = "Die Passw&ouml;rter stimmen nicht &uuml;berein!";
-		include 'html/register.html';
+		include 'html/register.php';
 		exit();
 	}
 	
 	if(!$db->isUserFree($user)) {
 		$error = "Der gew&auml;hlte Benutzername ist bereits vergeben!";
-		include 'html/register.html';
+		include 'html/register.php';
 		exit();
 	}
 	
 	$db->createUser($user, $mail, $pass);
 	redirect('login.php');
 } else {
-	include 'html/register.html';
+	include 'html/register.php';
 }
 
 

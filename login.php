@@ -19,7 +19,7 @@ if($action) {
 	
 	if(!$user || !$pass) {
 		$error = "Es wurden nicht alle Felder ausgef&uuml;llt. Bitte &uuml;berpr&uuml;fe Deine Eingabe!";
-		include 'html/login.html';
+		include 'html/login.php';
 		exit();
 	}
 	
@@ -30,9 +30,9 @@ if($action) {
 		redirect('index.php');
 	} else {
 		$error = "Benutzername oder Passwort falsch. Bitte &uuml;berpr&uuml;fe Deine Eingabe!";
-		include 'html/login.html';
+		include 'html/login.php';
 		exit();
 	}
 } else {
-	include 'html/login.html';
+	include 'html/login.php';
 }
