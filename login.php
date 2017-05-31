@@ -12,6 +12,7 @@ if(ses_isLoggedIn()) {
 $action = getPost('action');
 $error = "";
 
+/* Wurde das POST-Flag gesetzt, wurde ein Login angefragt */
 if($action) {
 	$user = getPost('user');
 	$pass = getPost('pass');

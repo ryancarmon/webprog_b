@@ -12,7 +12,9 @@ class DatabaseWrapper {
 		}
 	}
 	
+	/* Fügt dem System einen neuen Benutzer hinzu */
 	public function createUser($user, $mail, $pass) {
+		$user = htmlentities($user);
 		$pass = sha1($pass);
 		
 		$stmt = $this->dbo->prepare('INSERT INTO users (Username, Password, Mail) VALUES (:name, :pass, :mail)');
@@ -23,7 +25,10 @@ class DatabaseWrapper {
 		return $stmt->execute() == 1;
 	}
 	
+	/* Liefert true, wenn kein Benutzer mit dem übergebenen Namen existiert */
 	public function isUserFree($user) {
+		$user = htmlentities($user);
+		
 		$stmt = $this->dbo->prepare('SELECT COUNT(*) AS Anz FROM users WHERE Username LIKE :name');
 		$stmt->bindParam(':name', $user);
 		$stmt->execute();
@@ -31,7 +36,10 @@ class DatabaseWrapper {
 		return $stmt->fetch()['Anz'] == 0;
 	}
 	
+	/* Überprüft, ob eine Benutzer/Passwort-Kombination gültig ist */
 	public function isLoginValid($user, $pass) {
+		$user = htmlentities($user);
+		
 		$stmt = $this->dbo->prepare('SELECT COUNT(*) AS Anz, ID, Username, Password FROM users WHERE Username LIKE :name');
 		$stmt->bindParam(':name', $user);
 		$stmt->execute();
@@ -47,6 +55,7 @@ class DatabaseWrapper {
 		}
 	}
 	
+	/* Erstellt einen neuen Post für den gegebenen Benutzer */
 	public function createPost($userId, $text) {
 		$time = time();
 		
@@ -55,9 +64,10 @@ class DatabaseWrapper {
 		$stmt->bindParam(':time', $time);
 		$stmt->bindParam(':text', $text);
 		
-		return $stmt->execute() == 1;
+		return $stmt->execute();
 	}
 	
+	/* Liefert ein Feld mit allen verfügbaren Posts zurück */
 	public function getPosts() {
 		$prepString = '
 			SELECT p.ID AS PID, u.ID AS UID, u.Username AS User, u.Image AS Image, p.Timestamp as Timestamp, p.Text as Text 
@@ -72,6 +82,16 @@ class DatabaseWrapper {
 		return $stmt->fetchAll();
 	}
 	
+	/* Liefert die UserID für eine Post ID */
+	public function getPostAuthor($postId) {
+		$stmt = $this->dbo->prepare('Select User FROM posts WHERE ID= :id');
+		$stmt->bindParam(':id',$postId);
+		$stmt->execute();
+		
+		return $stmt->fetch()['User'];
+	}
+	
+	/* Liefert die Anzahl aller Likes für einen gegebenen Post */
 	public function getLikes($postId) {
 		$stmt = $this->dbo->prepare('SELECT COUNT(*) AS Likes FROM likes WHERE Post = :post');
 		$stmt->bindParam(':post', $postId);
@@ -80,6 +100,7 @@ class DatabaseWrapper {
 		return $stmt->fetch()['Likes'];
 	}
 	
+	/* Überprüft ob ein gegebener Beitrag von einem gegebenen Benutzer geliked wurde */
 	public function isLiked($userId, $postId) {
 		$stmt = $this->dbo->prepare('SELECT COUNT(*) AS Liked FROM likes WHERE Post = :post AND User = :user');
 		$stmt->bindParam(':post', $postId);
@@ -89,20 +110,22 @@ class DatabaseWrapper {
 		return $stmt->fetch()['Liked'];
 	}
 	
+	/* Fügt einem Post einen Like des gegebenen Benutzers hinzu - Ein Benutzer kann einen Post nicht mehrfach liken */
 	public function addLike($userId, $postId) {
 		$stmt = $this->dbo->prepare('INSERT INTO likes (User, Post) VALUES (:user, :post)');
 		$stmt->bindParam(':user', $userId);
 		$stmt->bindParam(':post', $postId);
 		
-		return $stmt->execute() == 1;
+		return $stmt->execute();
 	}
-	
+
+	/* Entfernt einen Like von einem Post */
 	public function removeLike($userId, $postId) {
 		$stmt = $this->dbo->prepare('DELETE FROM likes WHERE User = :user AND Post = :post');
 		$stmt->bindParam(':user', $userId);
 		$stmt->bindParam(':post', $postId);
 		
-		return $stmt->execute() == 1;
+		return $stmt->execute();
 	}
 }
 ?>

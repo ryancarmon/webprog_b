@@ -5,6 +5,7 @@ require 'php/functions.req.php';
 $db = new DatabaseWrapper();
 session_start();
 
+/* Ist der Benutzer bereits eingeloggt, wird er auf die Startseite umgeleitet */
 if(ses_isLoggedIn()) {
 	redirect('index.php');
 }
@@ -12,6 +13,7 @@ if(ses_isLoggedIn()) {
 $action = getPost('action');
 $error = "";
 
+/* Wurde das POST-Flag gesetzt, wurde eine Registrierung angefragt */
 if($action) {
 	$user = getPost('user');
 	$mail = getPost('mail');
