@@ -26,21 +26,21 @@
 		</ul>
 	</nav>
 	
-	<div id="postModal" class="modal">
+	<dialog id="postModal" class="modal">
 		<div class="modal-content">
-			<div class="modal-header">
+			<section class="modal-header">
 				<span class="close" onclick="closeModal()">&times;</span>
 				<h2>Beitrag verfassen</h2>
-			</div>
-			<div class="modal-body">
+			</section>
+			<section class="modal-body">
 				<form onsubmit="return postValid()" method="POST">
 					<input type="hidden" name="action" value="post">
 					<textarea id="postText" name="text" placeholder="..."></textarea>
 					<input id="postBtn" class="button" type="Submit" value="Posten">
 				</form>
-			</div>
+			</section>
 		</div>
-	</div>
+	</dialog>
 	
 	<main>
 		<section id="home">
