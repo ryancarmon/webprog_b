@@ -57,7 +57,7 @@ function displayPost($post) {
 	if(!$is_own) {
 		$likestring = ($is_liked)?
 			"<img onclick=\"likeClick($pid);\" width=\"20\" height=\"20\" src=\"img/unlike.png\" alt=\"Gef&auml;llt mir nicht mehr\" value=\"Gef&auml;llt mir nicht mehr\"> ":
-			"<img onclick=\"likeClick($pid);\" width=\"20\" height=\"20\" src=\"img/like.png\" alt=\"Gef&auml;llt mir\ alue=\"Gef&auml;llt mir\"> ";
+			"<img onclick=\"likeClick($pid);\" width=\"20\" height=\"20\" src=\"img/like.png\" alt=\"Gef&auml;llt mir\" value=\"Gef&auml;llt mir\"> ";
 	}
 	
 	$likestring .= $likes." Person";
